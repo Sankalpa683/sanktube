@@ -15,11 +15,11 @@
   <body>
     <nav class="navbar">
       <div class="logo">
-        <img src="logos.png" alt="YouTube Logo">
+        <img src="logos.png" alt="YouTube Logo" id="sanktube_logo">
       </div>
       <div class="search-bar" style="display: flex;">
-        <input type="text" placeholder="Search" id="searchInput" style="width: 100%;">
-        <button onclick="searchVideos()" style="margin-left: 1rem;">
+        <input type="text" placeholder="Search" id="searchInput" style="width: 100%;" onclick="searchclick()">
+        <button onclick="searchVideos()" style="margin-left: 1rem;" id="searchButton">
           <i class="fa fa-search"></i>
         </button>
       </div>
@@ -74,6 +74,32 @@
       </div>
     </footer>
   </body>
+  <script>
+    // Get references to elements
+    const logo = document.getElementById('sanktube_logo');
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+
+    // Add event listener to search input
+    searchInput.addEventListener('input', function() {
+        // Hide logo when user starts typing
+        logo.style.display = 'none';
+    });
+
+    // Add event listener to search button
+    searchButton.addEventListener('click', function() {
+        // Show logo when button is clicked
+        logo.style.display = 'block';
+    });
+</script>
+  <script>
+    var sanktube_logo = document.getElementById('sanktube_logo');
+    function searchclick(){
+      
+      sanktube_logo.style.display = "none";
+    }
+    sanktube_logo.style.display = "block";    
+  </script>
   <script>
     const API_KEY = 'AIzaSyCdWFPMFOvYIuJjclMPtO9MhdXyUUln0Fk';
 
